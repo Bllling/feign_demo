@@ -1,0 +1,24 @@
+server:
+  port: 6868
+  
+spring:
+  application: 
+    name: eureka-server
+  security:
+    user:
+      name: lin
+      password: 123
+      
+eureka:
+  instance:
+    hostname: localhost
+
+  client: 
+    # 是否开始注册服务，因为我自己就是一个注册服务器，并且不需要向其他注册服务器注册，所以改成false
+    registerWithEureka: false
+    # 是否拉起服务列表，这里我只提供服务给别的服务
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
+  server:
+    enable-self-preservation: false #关闭自我保护护护护

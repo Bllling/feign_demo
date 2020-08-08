@@ -1,0 +1,47 @@
+spring: 
+  profiles: 
+    active: dev-7777
+ 
+
+---
+spring: 
+  profiles: dev-7777
+  application:
+    name: user-service
+
+server:
+  port: 7777
+    
+eureka:
+  client: 
+    serviceUrl:
+      defaultZone: http://lin:123@127.0.0.1:6868/eureka
+      
+      
+---
+spring: 
+  profiles: dev-7778
+  application:
+    name: user-service
+
+server:
+  port: 7778
+    
+eureka:
+  client: 
+    serviceUrl:
+      defaultZone: http://lin:123@127.0.0.1:6868/eureka
+      
+---
+spring: 
+  profiles: dev-7779
+  application:
+    name: user-service
+
+server:
+  port: 7779
+    
+eureka:
+  client: 
+    serviceUrl:
+      defaultZone: http://lin:123@127.0.0.1:6868/eureka

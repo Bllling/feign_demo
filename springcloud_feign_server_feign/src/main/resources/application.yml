@@ -1,0 +1,16 @@
+server:
+  port: 8888
+  
+spring:
+  application: 
+    name: feign-server
+
+eureka:
+  client: 
+    # 是否开始注册服务，因为我自己就是一个注册服务器，并且不需要向其他注册服务器注册，所以改成false
+    #registerWithEureka: false
+    # 是否拉起服务列表，这里我只提供服务给别的服务
+    #fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://lin:123@127.0.0.1:6868/eureka
+    
